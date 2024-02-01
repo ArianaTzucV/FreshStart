@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StaticTextButton extends StatelessWidget {
-  const StaticTextButton({Key? key});
-  Color blue = const Color(0xFF034F8D);
+  const StaticTextButton({super.key});
+  // Color blue = const Color(0xFF034F8D);
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,9 @@ class StaticTextButton extends StatelessWidget {
           onPressed: () {
             // Código
           },
-          child: Text(
+          child: const Text(
             'Cambiar',
-            style: TextStyle( color: blue),
+            style: TextStyle( color: Color(0xFF034F8D)),
             ),
         ),
       ],

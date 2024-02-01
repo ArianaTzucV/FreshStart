@@ -4,7 +4,8 @@ class GeneralButtonWidget extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
 
-  const GeneralButtonWidget({Key? key, required this.text, this.onPressed}) : super(key: key);
+  const GeneralButtonWidget({Key? key, required this.text, this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +13,13 @@ class GeneralButtonWidget extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: 0.8,
         child: SizedBox(
-          height: 35.0, // Altura fija de 50 píxeles
+          height: 55.0, // Altura fija de 50 píxeles
           child: ElevatedButton(
             onPressed: onPressed,
-            child: Text(text),
+            child: Text(
+              text,
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),
