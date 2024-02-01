@@ -27,15 +27,6 @@ class AddButtonWidget extends StatelessWidget {
             size: 40.00,
           ),
         ),
-        const SizedBox(
-            width: 10), // Puedes ajustar este espacio según sea necesario
-        const Text(
-          'Inscribir nuevo beneficiario',
-          style: TextStyle(
-            color: Color(0xFF1A2D4D), // Puedes ajustar el color del texto
-            fontSize: 16.0, // Puedes ajustar el tamaño del texto
-          ),
-        ),
       ],
     );
   }
