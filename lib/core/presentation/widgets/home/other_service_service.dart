@@ -16,51 +16,56 @@ class OtherServiceSection extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
               color: const Color(0xFFFAFAFA)),
-          padding:
-              const EdgeInsets.only(left: 25.0, top: 10.0, right: 25.0),
+          padding: const EdgeInsets.only(left: 25.0, top: 10.0, right: 25.0),
           child: Column(
             children: [
               const Row(
                 children: [
                   Text(
                     "Otros Servicios",
-                    style: TextStyle(
-                        fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
               Container(
                 padding: const EdgeInsets.only(top: 25.0, bottom: 20.0),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ServiceIconButton(
-                        title1: "Transferir",
-                        title2: "Internacional",
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Color(0xFFFAFAFA),
-                        ),
-                        bgColor: Color(0xFF034F8D),
-                        fgColor: Color(0xFF060912)),
+                      title1: "Transferir",
+                      title2: "Internacional",
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Color(0xFFFAFAFA),
+                      ),
+                      bgColor: const Color(0xFF034F8D),
+                      fgColor: const Color(0xFF060912),
+                      onTap: () {},
+                    ),
                     ServiceIconButton(
-                        title1: "Recarga",
-                        title2: "Celular",
-                        icon: Icon(
-                          Icons.phone_android,
-                          color: Color(0xFFFAFAFA),
-                        ),
-                        bgColor: Color(0xFF034F8D),
-                        fgColor: Color(0xFF060912)),
+                      title1: "Recarga",
+                      title2: "Celular",
+                      icon: const Icon(
+                        Icons.phone_android,
+                        color: Color(0xFFFAFAFA),
+                      ),
+                      bgColor: const Color(0xFF034F8D),
+                      fgColor: const Color(0xFF060912),
+                      onTap: () {},
+                    ),
                     ServiceIconButton(
-                        title1: "Operaciones",
-                        title2: "QR",
-                        icon: Icon(
-                          Icons.qr_code_2,
-                          color: Color(0xFFFAFAFA),
-                        ),
-                        bgColor: Color(0xFF034F8D),
-                        fgColor: Color(0xFF060912)),
+                      title1: "Operaciones",
+                      title2: "QR",
+                      icon: const Icon(
+                        Icons.qr_code_2,
+                        color: Color(0xFFFAFAFA),
+                      ),
+                      bgColor: const Color(0xFF034F8D),
+                      fgColor: const Color(0xFF060912),
+                      onTap: () {},
+                    ),
                   ],
                 ),
               )

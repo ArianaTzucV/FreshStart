@@ -99,46 +99,52 @@ class HomePage extends StatelessWidget {
                             padding: const EdgeInsets.only(
                               top: 25.0,
                             ),
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 ServiceIconButton(
                                   title1: 'Transferir',
                                   title2: '',
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.arrow_back,
                                     color: Color(0xFF034F8D),
                                   ),
-                                  bgColor: Color(0xFFFAFAFA),
+                                  bgColor: const Color(0xFFFAFAFA),
                                   fgColor: Colors.white,
+                                  onTap: () {},
                                 ),
                                 ServiceIconButton(
-                                    title1: "Retiro sin",
-                                    title2: "Tarjeta",
-                                    icon: Icon(
-                                      Icons.send_to_mobile,
-                                      color: Color(0xFF034F8D),
-                                    ),
-                                    bgColor: Color(0xFFFAFAFA),
-                                    fgColor: Color(0xFFFAFAFA)),
+                                  title1: "Retiro sin",
+                                  title2: "Tarjeta",
+                                  icon: const Icon(
+                                    Icons.send_to_mobile,
+                                    color: Color(0xFF034F8D),
+                                  ),
+                                  bgColor: const Color(0xFFFAFAFA),
+                                  fgColor: const Color(0xFFFAFAFA),
+                                  onTap: () {},
+                                ),
                                 ServiceIconButton(
-                                    title1: "Pago de",
-                                    title2: "Servicio",
-                                    icon: Icon(
-                                      Icons.electrical_services_outlined,
-                                      color: Color(0xFF034F8D),
-                                    ),
-                                    bgColor: Color(0xFFFAFAFA),
-                                    fgColor: Color(0xFFFAFAFA)),
+                                  title1: "Pago de",
+                                  title2: "Servicio",
+                                  icon: const Icon(
+                                    Icons.electrical_services_outlined,
+                                    color: Color(0xFF034F8D),
+                                  ),
+                                  bgColor: const Color(0xFFFAFAFA),
+                                  fgColor: const Color(0xFFFAFAFA),
+                                  onTap: () {},
+                                ),
                                 ServiceIconButton(
                                     title1: "Estado de",
                                     title2: "Cuenta",
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.description,
                                       color: Color(0xFF034F8D),
                                     ),
-                                    bgColor: Color(0xFFFAFAFA),
-                                    fgColor: Color(0xFFFAFAFA)),
+                                    bgColor: const Color(0xFFFAFAFA),
+                                    fgColor: const Color(0xFFFAFAFA),
+                                    onTap: () {}),
                               ],
                             ),
                           )
@@ -178,7 +184,7 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Column(
+                  const Column(
                     children: [
                       // GeneralButtonWidget(text: 'Continuar', onPressed: () {},),
                       // TextButtonWidget(onPressed: () {}, textButton: "Solicitar Nuevo Correo")
