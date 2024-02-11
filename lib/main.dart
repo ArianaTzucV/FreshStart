@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/views/home.dart';
-import 'package:fresh_start/core/presentation/views/international_transaction_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0XFFF0F2F5)
       ),
       home: const HomePage(),
     );

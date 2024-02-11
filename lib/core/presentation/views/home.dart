@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fresh_start/core/presentation/widgets/general_button.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
+import 'package:fresh_start/core/presentation/widgets/text_button.dart';
 
 import '../widgets/home/service_icon_button.dart';
 
@@ -56,6 +58,7 @@ class HomePage extends StatelessWidget {
                                       const Text(
                                         "\$ 32,524",
                                         style: TextStyle(
+                                            fontFamily: 'Roboto',
                                             fontSize: 30.0,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.white),
@@ -63,7 +66,8 @@ class HomePage extends StatelessWidget {
                                       const Text(
                                         '36',
                                         style: TextStyle(
-                                            fontSize: 15,
+                                            fontFamily: 'Roboto',
+                                            fontSize: 15.0,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.white),
                                       ),
