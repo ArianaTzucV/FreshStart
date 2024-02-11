@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_start/core/presentation/widgets/general_button.dart';
+import 'package:fresh_start/core/presentation/views/transfers_view.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
-import 'package:fresh_start/core/presentation/widgets/text_button.dart';
 
 import '../widgets/home/service_icon_button.dart';
 
@@ -111,7 +110,13 @@ class HomePage extends StatelessWidget {
                                   ),
                                   bgColor: const Color(0xFFFAFAFA),
                                   fgColor: Colors.white,
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const TransfersView()));
+                                  },
                                 ),
                                 ServiceIconButton(
                                   title1: "Retiro sin",
@@ -174,7 +179,7 @@ class HomePage extends StatelessWidget {
                       TextButton(
                         onPressed: () {},
                         child: const Text(
-                          "Ver todas",
+                          "Ver todos",
                           style: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w500,
