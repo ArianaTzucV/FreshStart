@@ -83,6 +83,7 @@ flutter:
           weight: 500
         - asset: assets/fonts/MarkPro/Mark.Pro.Bold.otf
           weight: 700
+        - asset: assets/fonts/MarkPro/Mark.Pro.Black.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

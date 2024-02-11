@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/views/home.dart';
+import 'package:fresh_start/core/presentation/views/international_transaction_view.dart';
 
 void main() {
   runApp(const MyApp());

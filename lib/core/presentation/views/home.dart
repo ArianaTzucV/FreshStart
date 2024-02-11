@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
+
+import '../widgets/home/service_icon_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -89,38 +92,49 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                           Container(
-                            padding: const EdgeInsets.only(top: 25.0),
+                            padding: const EdgeInsets.only(
+                              top: 25.0,
+                            ),
                             child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                // ServiceIconButton(
-                                //   iconService: Icon(Icons.arrow_back),
-                                //   serviceText: "Transferir",
-                                //   serviceText2: "",
-                                //   bgColor: Color(0xFFFAFAFA),
-                                //   txtColor: Colors.white,
-                                // ),
-                                // ServiceIconButton(
-                                //   iconService: Icon(Icons.send_to_mobile),
-                                //   serviceText: "Retiro sin",
-                                //   serviceText2: "Tarjeta",
-                                //   bgColor: Color(0xFFFAFAFA),
-                                //   txtColor: Colors.white,
-                                // ),
-                                // ServiceIconButton(
-                                //   iconService: Icon(Icons.electrical_services),
-                                //   serviceText: "Pago de",
-                                //   serviceText2: "Servicios",
-                                //   bgColor: Color(0xFFFAFAFA),
-                                //   txtColor: Colors.white,
-                                // ),
-                                // ServiceIconButton(
-                                //   iconService: Icon(Icons.description),
-                                //   serviceText: "Estado de",
-                                //   serviceText2: "Cuenta",
-                                //   bgColor: Color(0xFFFAFAFA),
-                                //   txtColor: Colors.white,
-                                // )
+                                ServiceIconButton(
+                                  title1: 'Transferir',
+                                  title2: '',
+                                  icon: Icon(
+                                    Icons.arrow_back,
+                                    color: Color(0xFF034F8D),
+                                  ),
+                                  bgColor: Color(0xFFFAFAFA),
+                                  fgColor: Colors.white,
+                                ),
+                                ServiceIconButton(
+                                    title1: "Retiro sin",
+                                    title2: "Tarjeta",
+                                    icon: Icon(
+                                      Icons.send_to_mobile,
+                                      color: Color(0xFF034F8D),
+                                    ),
+                                    bgColor: Color(0xFFFAFAFA),
+                                    fgColor: Color(0xFFFAFAFA)),
+                                ServiceIconButton(
+                                    title1: "Pago de",
+                                    title2: "Servicio",
+                                    icon: Icon(
+                                      Icons.electrical_services_outlined,
+                                      color: Color(0xFF034F8D),
+                                    ),
+                                    bgColor: Color(0xFFFAFAFA),
+                                    fgColor: Color(0xFFFAFAFA)),
+                                ServiceIconButton(
+                                    title1: "Estado de",
+                                    title2: "Cuenta",
+                                    icon: Icon(
+                                      Icons.description,
+                                      color: Color(0xFF034F8D),
+                                    ),
+                                    bgColor: Color(0xFFFAFAFA),
+                                    fgColor: Color(0xFFFAFAFA)),
                               ],
                             ),
                           )
@@ -132,132 +146,72 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          const OtherServiceSection(),
           Center(
             child: Container(
-              padding: const EdgeInsets.only(top: 25.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: const Color(0xFFFAFAFA)),
-                padding:
-                    const EdgeInsets.only(left: 25.0, top: 10.0, right: 25.0),
-                child: Column(
-                  children: [
-                    const Row(
-                      children: [
-                        Text(
-                          "Otros Servicios",
-                          style: TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(top: 25.0, bottom: 20.0),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // ServiceIconButton(
-                          //   iconService: Icon(
-                          //     Icons.arrow_back,
-                          //     color: Colors.white,
-                          //   ),
-                          //   serviceText: "Transferencias",
-                          //   serviceText2: "Internacionales",
-                          //   bgColor: Color(0xFF034F8D),
-                          //   txtColor: Color(0xFF060912),
-                          // ),
-                          // ServiceIconButton(
-                          //   iconService:
-                          //       Icon(Icons.phone_android, color: Colors.white),
-                          //   serviceText: "Recarga",
-                          //   serviceText2: "Celular",
-                          //   bgColor: Color(0xFF034F8D),
-                          //   txtColor: Color(0xFF060912),
-                          // ),
-                          // ServiceIconButton(
-                          //   iconService:
-                          //       Icon(Icons.qr_code, color: Colors.white),
-                          //   serviceText: "Operaciones",
-                          //   serviceText2: "QR",
-                          //   bgColor: Color(0xFF034F8D),
-                          //   txtColor: Color(0xFF060912),
-                          // ),
-                        ],
+              padding:
+                  const EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Actividad Reciente',
+                        style: TextStyle(
+                            fontSize: 20.0, fontWeight: FontWeight.bold),
                       ),
-                    )
-                  ],
-                ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Ver todas",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF034F8D),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      // GeneralButtonWidget(text: 'Continuar', onPressed: () {},),
+                      // TextButtonWidget(onPressed: () {}, textButton: "Solicitar Nuevo Correo")
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                      // Container(
+                      //   padding: const EdgeInsets.only(bottom: 20.0),
+                      //   child: const RecentActivityCard(),
+                      // ),
+                    ],
+                  )
+                ],
               ),
             ),
           ),
-          Center(
-            child: Container(
-              padding: const EdgeInsets.only(top: 25.0),
-              child: Container(
-                padding:
-                    const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        const Text(
-                          'Actividad Reciente',
-                          style: TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.bold),
-                        ),
-                        const Spacer(),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "Ver todas",
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFF034F8D),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                        // Container(
-                        //   padding: const EdgeInsets.only(bottom: 20.0),
-                        //   child: const RecentActivityCard(),
-                        // ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );
