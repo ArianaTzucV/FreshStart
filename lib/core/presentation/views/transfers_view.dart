@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/new_contact_view.dart';
+import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 
 class TransfersView extends StatelessWidget {
   const TransfersView({super.key});
@@ -11,33 +13,18 @@ class TransfersView extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                padding:
-                    const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
-                child: const Text(
-                  "Cuenta Origen",
-                  style: TextStyle(
-                      fontFamily: 'MarkPro',
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+              const SubtitleWidget(subtitleText: 'Cuenta Origen'),
               const SizedBox(
                 height: 70.0,
               ),
-              Container(
-                padding:
-                    const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
-                child: const Text(
-                  "Destinatario",
-                  style: TextStyle(
-                      fontFamily: 'MarkPro',
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+              const SubtitleWidget(subtitleText: 'Destinatario'),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NewContactView()));
+                },
                 child: Container(
                   padding: const EdgeInsets.only(
                       left: 20.0, right: 20.0, top: 20.0, bottom: 10.0),
