@@ -12,7 +12,65 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: const HeaderHomePage(),
+
+        title: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: const CircleAvatar(
+                radius: 35.0,
+                backgroundColor: Color(0xFF0F694F),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "BS",
+                      style: TextStyle(
+                          fontFamily: 'MarkPro',
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '¡Hola!',
+                    style: TextStyle(
+                        fontFamily: 'MarkPro',
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal),
+                  ),
+                  Text(
+                    'Brayn Sahagun',
+                    style: TextStyle(
+                        fontFamily: 'MarkPro',
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Spacer(),
+            Container(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                  onTap: () {},
+                  child: const Icon(
+                    Icons.refresh,
+                    color: Color(0xFF034F8D),
+                    size: 25.0,
+                  )),
+            )
+          ],
+        ),
         toolbarHeight: 80.0,
         titleSpacing: 0.0,
       ),
