@@ -25,7 +25,7 @@ class TransfersView extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => NewContactView()));
+                          builder: (context) => const NewContactView()));
                 },
                 child: Container(
                   padding: const EdgeInsets.only(

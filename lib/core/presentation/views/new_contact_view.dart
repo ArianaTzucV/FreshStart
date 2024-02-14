@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/general_button.dart';
 import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 
@@ -9,6 +10,7 @@ class NewContactView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const AppBarWidget(titleAppBar: 'Nuevo Contacto'),
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
