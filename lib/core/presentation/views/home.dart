@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        backgroundColor: const Color(0XFFF0F2F5),
         title: Row(
           children: [
             Container(
@@ -58,9 +58,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                   onTap: () {},
                   child: const Icon(
@@ -223,7 +223,7 @@ class HomePage extends StatelessWidget {
           Center(
             child: Container(
               padding:
-                  const EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0),
+                  const EdgeInsets.only(left: 25.0, top: 30.0, right: 25.0),
               child: Column(
                 children: [
                   Row(
@@ -247,40 +247,56 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Column(
-                    children: [
-                      // GeneralButtonWidget(text: 'Continuar', onPressed: () {},),
-                      // TextButtonWidget(onPressed: () {}, textButton: "Solicitar Nuevo Correo")
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                      // Container(
-                      //   padding: const EdgeInsets.only(bottom: 20.0),
-                      //   child: const RecentActivityCard(),
-                      // ),
-                    ],
-                  )
+                  Container(
+                      margin: const EdgeInsets.only(top: 10.0),
+                      color: const Color(0xFFFAFAFA),
+                      padding: const EdgeInsets.only(
+                        top: 5.0,
+                        bottom: 5.0,
+                      ),
+                      child: const Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: CircleAvatar(
+                                  radius: 25.0,
+                                  child: Text(
+                                    'IC',
+                                    style: TextStyle(
+                                        fontFamily: 'MarkPro',
+                                        fontSize: 25.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Irving Coyolt',
+                                style: TextStyle(
+                                    fontFamily: 'MarkPro',
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'Transferencia',
+                                style: TextStyle(
+                                    fontFamily: 'MarkPro',
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          )
+                        ],
+                      )),
                 ],
               ),
             ),
