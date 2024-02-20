@@ -34,7 +34,7 @@ class cash_express extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(
-                                    'Tu Saldo Disponible',
+                                    'Prueba 2',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 20.0),
                                   ),
