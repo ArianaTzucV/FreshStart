@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fresh_start/colors.dart';
 import 'package:fresh_start/core/presentation/views/transfers_view.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
 
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20.0),
               child: const CircleAvatar(
                 radius: 35.0,
-                backgroundColor: Color(0xFF0F694F),
+                backgroundColor: c_secondary_complementary,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
