@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/rounded_button.dart';
 import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
+import 'package:fresh_start/core/presentation/widgets/transfers/contact_card.dart';
 
 class TransfersView extends StatelessWidget {
   const TransfersView({super.key});
@@ -47,7 +48,15 @@ class TransfersView extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
+                  ),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
                 ]),
               )
             ],

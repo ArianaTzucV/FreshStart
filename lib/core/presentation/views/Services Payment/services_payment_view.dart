@@ -1,20 +1,8 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(
-    MaterialApp(
-      home: Directionality(
-        textDirection: TextDirection
-            .ltr, // Puedes ajustar la dirección según tus necesidades
-        child: CodiaPage(),
-      ),
-    ),
-  );
-}
+import 'package:fresh_start/colors.dart';
 
 class CodiaPage extends StatefulWidget {
   CodiaPage({Key? key}) : super(key: key);
-
   @override
   State<StatefulWidget> createState() => _CodiaPage();
 }
@@ -27,12 +15,11 @@ class _CodiaPage extends State<CodiaPage> {
 
     return Scaffold(
       body: Container(
-        color: Colors.white,
         child: Container(
           width: screenWidth,
           height: screenHeight,
           decoration: BoxDecoration(
-            color: const Color(0xfff0f2f5),
+            color: colorBackground,
           ),
           child: Stack(
             children: [
@@ -47,7 +34,7 @@ class _CodiaPage extends State<CodiaPage> {
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontSize: 20,
-                    color: const Color(0xff060912),
+                    color: colorMainText,
                     fontWeight: FontWeight.bold,
                   ),
                   overflow: TextOverflow.ellipsis,

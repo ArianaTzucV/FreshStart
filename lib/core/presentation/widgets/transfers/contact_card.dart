@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/colors.dart';
 
 class ContactCard extends StatelessWidget {
   const ContactCard({
@@ -8,8 +9,17 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 10.0),
-        color: const Color(0xFFFAFAFA),
+        margin: const EdgeInsets.only(top: 10.0, bottom: 7.5),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.0),
+            color: colorPanel,
+            boxShadow: [
+              BoxShadow(
+                  color: colorMainText.withOpacity(0.1),
+                  blurRadius: 4.0,
+                  spreadRadius: 0.0,
+                  offset: const Offset(0.0, 6.0))
+            ]),
         padding: const EdgeInsets.only(
           top: 5.0,
           bottom: 5.0,
@@ -23,7 +33,7 @@ class ContactCard extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: CircleAvatar(
-                    backgroundColor: Color(0xFF0F694F),
+                    backgroundColor: colorSecondaryComplementary,
                     radius: 25.0,
                     child: Text(
                       'IC',
@@ -45,28 +55,32 @@ class ContactCard extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'MarkPro',
                       fontSize: 15.0,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      color: colorMainText),
                 ),
                 Text(
                   'IRVING COYOLT',
                   style: TextStyle(
                       fontFamily: 'MarkPro',
                       fontSize: 15.0,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      color: colorMainText),
                 ),
                 Text(
                   'Cuenta Maze Bank',
                   style: TextStyle(
                       fontFamily: 'MarkPro',
                       fontSize: 15.0,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w500,
+                      color: colorBorder),
                 ),
                 Text(
                   '0000 0000 0000',
                   style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 15.0,
-                      fontWeight: FontWeight.w400),
+                      fontWeight: FontWeight.w400,
+                      color: colorNumberText),
                 )
               ],
             ),

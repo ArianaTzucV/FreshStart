@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_start/colors.dart';
+import 'package:fresh_start/core/presentation/views/Cash%20Express/cash_express_view.dart';
+import 'package:fresh_start/core/presentation/views/Services%20Payment/services_payment_view.dart';
 import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
 import 'package:fresh_start/core/presentation/widgets/home/home_card.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
@@ -14,14 +16,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0XFFF0F2F5),
+        backgroundColor: colorBackground,
         title: Row(
           children: [
             Container(
               padding: const EdgeInsets.only(left: 20.0),
               child: const CircleAvatar(
                 radius: 35.0,
-                backgroundColor: c_secondary_complementary,
+                backgroundColor: colorSecondaryComplementary,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +69,7 @@ class HomePage extends StatelessWidget {
                   onTap: () {},
                   child: const Icon(
                     Icons.refresh,
-                    color: Color(0xFF034F8D),
+                    color: colorPrimaryComplementary,
                     size: 25.0,
                   )),
             )
@@ -134,7 +136,7 @@ class HomePage extends StatelessWidget {
                                           onPressed: () {},
                                           icon: const Icon(
                                             Icons.visibility_off,
-                                            color: Color(0xFFA3A4A6),
+                                            color: colorTertearyText,
                                             size: 26.0,
                                           ))
                                     ],
@@ -166,9 +168,9 @@ class HomePage extends StatelessWidget {
                                   title2: '',
                                   icon: const Icon(
                                     Icons.arrow_back,
-                                    color: Color(0xFF034F8D),
+                                    color: colorPrimaryComplementary,
                                   ),
-                                  bgColor: const Color(0xFFFAFAFA),
+                                  bgColor: colorPanel,
                                   fgColor: Colors.white,
                                   onTap: () {
                                     Navigator.push(
@@ -183,32 +185,43 @@ class HomePage extends StatelessWidget {
                                   title2: "Tarjeta",
                                   icon: const Icon(
                                     Icons.send_to_mobile,
-                                    color: Color(0xFF034F8D),
+                                    color: colorPrimaryComplementary,
                                   ),
-                                  bgColor: const Color(0xFFFAFAFA),
-                                  fgColor: const Color(0xFFFAFAFA),
-                                  onTap: () {},
+                                  bgColor: colorPanel,
+                                  fgColor: colorPanel,
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                cash_express()));
+                                  },
                                 ),
                                 ServiceIconButton(
                                   title1: "Pago de",
                                   title2: "Servicio",
                                   icon: const Icon(
                                     Icons.electrical_services_outlined,
-                                    color: Color(0xFF034F8D),
+                                    color: colorPrimaryComplementary,
                                   ),
-                                  bgColor: const Color(0xFFFAFAFA),
-                                  fgColor: const Color(0xFFFAFAFA),
-                                  onTap: () {},
+                                  bgColor: colorPanel,
+                                  fgColor: colorPanel,
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => CodiaPage()));
+                                  },
                                 ),
                                 ServiceIconButton(
                                     title1: "Estado de",
                                     title2: "Cuenta",
                                     icon: const Icon(
                                       Icons.description,
-                                      color: Color(0xFF034F8D),
+                                      color: colorPrimaryComplementary,
                                     ),
-                                    bgColor: const Color(0xFFFAFAFA),
-                                    fgColor: const Color(0xFFFAFAFA),
+                                    bgColor: colorPanel,
+                                    fgColor: colorPanel,
                                     onTap: () {}),
                               ],
                             ),
@@ -243,7 +256,7 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xFF034F8D),
+                            color: colorPrimaryComplementary,
                           ),
                         ),
                       )
