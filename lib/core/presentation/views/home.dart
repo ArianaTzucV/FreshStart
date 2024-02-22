@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-<<<<<<< HEAD
 import 'package:fresh_start/colors.dart';
-import 'package:fresh_start/core/presentation/views/transfers_view.dart';
-=======
 import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
 import 'package:fresh_start/core/presentation/widgets/home/home_card.dart';
->>>>>>> develop
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
 
 import '../widgets/home/service_icon_button.dart';
