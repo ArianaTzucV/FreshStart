@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_start/core/presentation/views/new_contact_view.dart';
+import 'package:fresh_start/core/presentation/views/Transfers/new_contact_view.dart';
 
 class RoundedButtonWidget extends StatelessWidget {
   const RoundedButtonWidget({
@@ -10,10 +10,8 @@ class RoundedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const NewContactView()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const NewContactView()));
       },
       child: Container(
         padding: const EdgeInsets.only(

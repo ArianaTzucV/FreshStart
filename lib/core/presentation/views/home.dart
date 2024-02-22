@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_start/core/presentation/views/transfers_view.dart';
+import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
 import 'package:fresh_start/core/presentation/widgets/home/home_card.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
 
@@ -249,6 +249,13 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
                 ],
               ),
             ),
@@ -258,5 +265,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

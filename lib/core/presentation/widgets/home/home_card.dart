@@ -62,15 +62,37 @@ class HomeCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("\$ 2,500.00", style: TextStyle(fontFamily: 'MarkPro', fontSize: 20.0, ),),
+                  Text(
+                    "\$ 2,500.00",
+                    style: TextStyle(
+                      fontFamily: 'MarkPro',
+                      fontSize: 20.0,
+                    ),
+                  ),
                   Row(
                     children: [
                       Column(
-                        children: [Text("20-01-2024", style: TextStyle(fontFamily: 'MarkPro', fontSize: 12, color: Color(0xFFA3A4A6)),)],
+                        children: [
+                          Text(
+                            "20-01-2024",
+                            style: TextStyle(
+                                fontFamily: 'MarkPro',
+                                fontSize: 12,
+                                color: Color(0xFFA3A4A6)),
+                          )
+                        ],
                       ),
-                      SizedBox(width: 10.0,),
+                      SizedBox(
+                        width: 10.0,
+                      ),
                       Column(
-                        children: [Text("11:24 PM", style: TextStyle(fontFamily: 'MarkPro', fontSize: 12, color: Color(0xFFA3A4A6)))],
+                        children: [
+                          Text("11:24 PM",
+                              style: TextStyle(
+                                  fontFamily: 'MarkPro',
+                                  fontSize: 12,
+                                  color: Color(0xFFA3A4A6)))
+                        ],
                       )
                     ],
                   )
