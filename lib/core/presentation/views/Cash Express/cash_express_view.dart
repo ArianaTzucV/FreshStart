@@ -4,7 +4,7 @@ import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfe
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 import '../../widgets/home/service_icon_button.dart';
-import 'package:fresh_start/colors.dart';
+import 'package:fresh_start/styles.dart';
 
 class cash_express extends StatelessWidget {
   @override

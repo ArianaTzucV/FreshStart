@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_start/colors.dart';
+import 'package:fresh_start/styles.dart';
 
 class HomeCard extends StatelessWidget {
   const HomeCard({
