@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_start/colors.dart';
+import 'package:fresh_start/styles.dart';
 import 'package:fresh_start/core/presentation/views/Cash%20Express/cash_express_view.dart';
 import 'package:fresh_start/core/presentation/views/Services%20Payment/services_payment_view.dart';
 import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
@@ -28,14 +28,9 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "BS",
-                      style: TextStyle(
-                          fontFamily: 'MarkPro',
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    )
+                    Text_RobotoBold(text: "BS",
+                    color: Colors.white,
+                    size: 30,),
                   ],
                 ),
               ),
