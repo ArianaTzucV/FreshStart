@@ -33,7 +33,7 @@ class TransfersView extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: 'MarkPro',
                             fontSize: 20.0,
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.bol),
                       ),
                       const Spacer(),
                       TextButton(
