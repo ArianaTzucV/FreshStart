@@ -13,17 +13,17 @@ const Color colorDisabled = Color(0xFFC7CDD6);
 const Color colorDisabledText = Color(0xFF9B9B9B);
 const Color colorNumberText = Color(0xFF808080);
 
-class Text_MarkProRegular extends StatelessWidget {
+class TextMarkProRegular extends StatelessWidget {
   final String text;
   final Color color;
   final double size;
 
-  const Text_MarkProRegular({
-    Key? key, 
+  const TextMarkProRegular({
+    Key? key,
     required this.text,
-    this.color = Colors.black, // Usamos Colors.black como valor predeterminado
+    this.color = colorMainText,
     this.size = 20,
-  }) : super(key: key); 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,17 +39,17 @@ class Text_MarkProRegular extends StatelessWidget {
   }
 }
 
-class Text_MarkProMedium extends StatelessWidget {
+class TextMarkProMedium extends StatelessWidget {
   final String text;
   final Color color;
   final double size;
 
-  const Text_MarkProMedium({
-    Key? key, 
+  const TextMarkProMedium({
+    Key? key,
     required this.text,
-    this.color = Colors.black, // Usamos Colors.black como valor predeterminado
+    this.color = colorMainText,
     this.size = 20,
-  }) : super(key: key); 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,17 +65,17 @@ class Text_MarkProMedium extends StatelessWidget {
   }
 }
 
-class Text_MarkProBold extends StatelessWidget {
+class TextMarkProBold extends StatelessWidget {
   final String text;
   final Color color;
   final double size;
 
-  const Text_MarkProBold({
-    Key? key, 
+  const TextMarkProBold({
+    Key? key,
     required this.text,
-    this.color = Colors.black, // Usamos Colors.black como valor predeterminado
+    this.color = colorMainText,
     this.size = 20,
-  }) : super(key: key); 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -91,17 +91,17 @@ class Text_MarkProBold extends StatelessWidget {
   }
 }
 
-class Text_RobotoBold extends StatelessWidget {
+class TextRobotoBold extends StatelessWidget {
   final String text;
   final Color color;
   final double size;
 
-  const Text_RobotoBold({
-    Key? key, 
+  const TextRobotoBold({
+    Key? key,
     required this.text,
-    this.color = Colors.black, // Usamos Colors.black como valor predeterminado
+    this.color = colorMainText,
     this.size = 20,
-  }) : super(key: key); 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -117,17 +117,17 @@ class Text_RobotoBold extends StatelessWidget {
   }
 }
 
-class Text_RobotoMedium extends StatelessWidget {
+class TextRobotoMedium extends StatelessWidget {
   final String text;
   final Color color;
   final double size;
 
-  const Text_RobotoMedium({
-    Key? key, 
+  const TextRobotoMedium({
+    Key? key,
     required this.text,
-    this.color = Colors.black, // Usamos Colors.black como valor predeterminado
+    this.color = colorMainText,
     this.size = 20,
-  }) : super(key: key); 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -143,17 +143,17 @@ class Text_RobotoMedium extends StatelessWidget {
   }
 }
 
-class Text_RobotoRegular extends StatelessWidget {
+class TextRobotoRegular extends StatelessWidget {
   final String text;
   final Color color;
   final double size;
 
-  const Text_RobotoRegular({
-    Key? key, 
+  const TextRobotoRegular({
+    Key? key,
     required this.text,
-    this.color = Colors.black, // Usamos Colors.black como valor predeterminado
+    this.color = colorMainText,
     this.size = 20,
-  }) : super(key: key); 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

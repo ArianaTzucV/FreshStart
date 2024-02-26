@@ -28,9 +28,11 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text_RobotoBold(text: "BS",
-                    color: Colors.white,
-                    size: 30,),
+                    TextRobotoBold(
+                      text: "BS",
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ],
                 ),
               ),
@@ -40,20 +42,14 @@ class HomePage extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '¡Hola!',
-                    style: TextStyle(
-                        fontFamily: 'MarkPro',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.normal),
+                  TextMarkProRegular(
+                    text: 'Hola',
+                    size: 20.0,
                   ),
-                  Text(
-                    'Brayn Sahagun',
-                    style: TextStyle(
-                        fontFamily: 'MarkPro',
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold),
-                  )
+                  TextMarkProBold(
+                    text: 'Brayn Sahagun',
+                    size: 25,
+                  ),
                 ],
               ),
             ),
@@ -102,30 +98,23 @@ class HomePage extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
-                                    'Tu Saldo Disponible',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 20.0),
+                                  const TextMarkProRegular(
+                                    text: 'Tu Saldo Disponible',
+                                    color: Colors.white,
                                   ),
                                   Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text(
-                                        "\$ 32,524",
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 30.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
+                                      const TextRobotoBold(
+                                        text: '\$ 32,524',
+                                        size: 30.0,
+                                        color: Colors.white,
                                       ),
-                                      const Text(
-                                        '36',
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 15.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
+                                      const TextRobotoBold(
+                                        text: '36',
+                                        size: 15.0,
+                                        color: Colors.white,
                                       ),
                                       IconButton(
                                           onPressed: () {},
@@ -238,22 +227,17 @@ class HomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text(
-                        'Actividad Reciente',
-                        style: TextStyle(
-                            fontSize: 20.0, fontWeight: FontWeight.bold),
+                      const TextMarkProBold(
+                        text: 'Actividad Reciente',
+                        size: 20.0,
                       ),
                       const Spacer(),
                       TextButton(
                         onPressed: () {},
-                        child: const Text(
-                          "Ver todos",
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w500,
-                            color: colorPrimaryComplementary,
-                          ),
-                        ),
+                        child: const TextMarkProMedium(
+                            text: 'Ver todos',
+                            size: 15.0,
+                            color: colorPrimaryComplementary),
                       )
                     ],
                   ),
