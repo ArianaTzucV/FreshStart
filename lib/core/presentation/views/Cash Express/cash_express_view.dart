@@ -2,45 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class CashExpress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Retiro sin Tarjeta',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBarWidget(titleAppBar: "Retiro sin Tarjeta"),
         body: SafeArea(
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.arrow_back,
-                        size: 32,
-                        color: Colors.black,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        'Retiro sin Tarjeta',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 SizedBox(height: 20),
                 Center(
                   child: Container(
@@ -180,8 +151,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
