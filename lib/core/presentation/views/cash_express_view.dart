@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
+import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Retiro sin Tarjeta'),
-        ),
+        appBar: AppBarWidget(titleAppBar: "Retiro sin Tarjeta"),
         body: SafeArea(
           child: Center(
             child: Column(
