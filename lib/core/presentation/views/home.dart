@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_start/core/presentation/views/transfers_view.dart';
+import 'package:fresh_start/styles.dart';
+import 'package:fresh_start/core/presentation/views/Cash%20Express/cash_express_view.dart';
+import 'package:fresh_start/core/presentation/views/Services%20Payment/services_payment_view.dart';
+import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
+import 'package:fresh_start/core/presentation/widgets/home/home_card.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
 
 import '../widgets/home/service_icon_button.dart';
@@ -12,26 +16,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0XFFF0F2F5),
+        backgroundColor: colorBackground,
         title: Row(
           children: [
             Container(
               padding: const EdgeInsets.only(left: 20.0),
               child: const CircleAvatar(
                 radius: 35.0,
-                backgroundColor: Color(0xFF0F694F),
+                backgroundColor: colorSecondaryComplementary,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "BS",
-                      style: TextStyle(
-                          fontFamily: 'MarkPro',
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    )
+                    TextRobotoBold(
+                      text: "BS",
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ],
                 ),
               ),
@@ -41,20 +42,14 @@ class HomePage extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '¡Hola!',
-                    style: TextStyle(
-                        fontFamily: 'MarkPro',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.normal),
+                  TextMarkProRegular(
+                    text: 'Hola',
+                    size: 20.0,
                   ),
-                  Text(
-                    'Brayn Sahagun',
-                    style: TextStyle(
-                        fontFamily: 'MarkPro',
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold),
-                  )
+                  TextMarkProBold(
+                    text: 'Brayn Sahagun',
+                    size: 25,
+                  ),
                 ],
               ),
             ),
@@ -65,7 +60,7 @@ class HomePage extends StatelessWidget {
                   onTap: () {},
                   child: const Icon(
                     Icons.refresh,
-                    color: Color(0xFF034F8D),
+                    color: colorPrimaryComplementary,
                     size: 25.0,
                   )),
             )
@@ -103,36 +98,29 @@ class HomePage extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
-                                    'Tu Saldo Disponible',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 20.0),
+                                  const TextMarkProRegular(
+                                    text: 'Tu Saldo Disponible',
+                                    color: Colors.white,
                                   ),
                                   Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text(
-                                        "\$ 32,524",
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 30.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
+                                      const TextRobotoBold(
+                                        text: '\$ 32,524',
+                                        size: 30.0,
+                                        color: Colors.white,
                                       ),
-                                      const Text(
-                                        '36',
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 15.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
+                                      const TextRobotoBold(
+                                        text: '36',
+                                        size: 15.0,
+                                        color: Colors.white,
                                       ),
                                       IconButton(
                                           onPressed: () {},
                                           icon: const Icon(
                                             Icons.visibility_off,
-                                            color: Color(0xFFA3A4A6),
+                                            color: colorTertearyText,
                                             size: 26.0,
                                           ))
                                     ],
@@ -164,9 +152,9 @@ class HomePage extends StatelessWidget {
                                   title2: '',
                                   icon: const Icon(
                                     Icons.arrow_back,
-                                    color: Color(0xFF034F8D),
+                                    color: colorPrimaryComplementary,
                                   ),
-                                  bgColor: const Color(0xFFFAFAFA),
+                                  bgColor: colorPanel,
                                   fgColor: Colors.white,
                                   onTap: () {
                                     Navigator.push(
@@ -181,32 +169,43 @@ class HomePage extends StatelessWidget {
                                   title2: "Tarjeta",
                                   icon: const Icon(
                                     Icons.send_to_mobile,
-                                    color: Color(0xFF034F8D),
+                                    color: colorPrimaryComplementary,
                                   ),
-                                  bgColor: const Color(0xFFFAFAFA),
-                                  fgColor: const Color(0xFFFAFAFA),
-                                  onTap: () {},
+                                  bgColor: colorPanel,
+                                  fgColor: colorPanel,
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                cash_express()));
+                                  },
                                 ),
                                 ServiceIconButton(
                                   title1: "Pago de",
                                   title2: "Servicio",
                                   icon: const Icon(
                                     Icons.electrical_services_outlined,
-                                    color: Color(0xFF034F8D),
+                                    color: colorPrimaryComplementary,
                                   ),
-                                  bgColor: const Color(0xFFFAFAFA),
-                                  fgColor: const Color(0xFFFAFAFA),
-                                  onTap: () {},
+                                  bgColor: colorPanel,
+                                  fgColor: colorPanel,
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => CodiaPage()));
+                                  },
                                 ),
                                 ServiceIconButton(
                                     title1: "Estado de",
                                     title2: "Cuenta",
                                     icon: const Icon(
                                       Icons.description,
-                                      color: Color(0xFF034F8D),
+                                      color: colorPrimaryComplementary,
                                     ),
-                                    bgColor: const Color(0xFFFAFAFA),
-                                    fgColor: const Color(0xFFFAFAFA),
+                                    bgColor: colorPanel,
+                                    fgColor: colorPanel,
                                     onTap: () {}),
                               ],
                             ),
@@ -228,75 +227,28 @@ class HomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text(
-                        'Actividad Reciente',
-                        style: TextStyle(
-                            fontSize: 20.0, fontWeight: FontWeight.bold),
+                      const TextMarkProBold(
+                        text: 'Actividad Reciente',
+                        size: 20.0,
                       ),
                       const Spacer(),
                       TextButton(
                         onPressed: () {},
-                        child: const Text(
-                          "Ver todos",
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF034F8D),
-                          ),
-                        ),
+                        child: const TextMarkProMedium(
+                            text: 'Ver todos',
+                            size: 15.0,
+                            color: colorPrimaryComplementary),
                       )
                     ],
                   ),
-                  Container(
-                      margin: const EdgeInsets.only(top: 10.0),
-                      color: const Color(0xFFFAFAFA),
-                      padding: const EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                      ),
-                      child: const Row(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: CircleAvatar(
-                                  radius: 25.0,
-                                  child: Text(
-                                    'IC',
-                                    style: TextStyle(
-                                        fontFamily: 'MarkPro',
-                                        fontSize: 25.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Irving Coyolt',
-                                style: TextStyle(
-                                    fontFamily: 'MarkPro',
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                'Transferencia',
-                                style: TextStyle(
-                                    fontFamily: 'MarkPro',
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          )
-                        ],
-                      )),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
+                  const HomeCard(),
                 ],
               ),
             ),

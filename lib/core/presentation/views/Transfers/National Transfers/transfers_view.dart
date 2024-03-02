@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_start/core/presentation/views/new_contact_view.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
+import 'package:fresh_start/core/presentation/widgets/rounded_button.dart';
 import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
+import 'package:fresh_start/core/presentation/widgets/transfers/contact_card.dart';
 
 class TransfersView extends StatelessWidget {
   const TransfersView({super.key});
@@ -20,38 +21,7 @@ class TransfersView extends StatelessWidget {
                 height: 70.0,
               ),
               const SubtitleWidget(subtitleText: 'Destinatario'),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const NewContactView()));
-                },
-                child: Container(
-                  padding: const EdgeInsets.only(
-                      left: 20.0, right: 20.0, top: 20.0, bottom: 10.0),
-                  child: const Row(
-                    children: [
-                      Icon(
-                        Icons.add_circle_outline,
-                        size: 50.0,
-                        color: Color(0XFF034F8D),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "Nuevo",
-                          style: TextStyle(
-                              fontFamily: 'MarkPro',
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0XFF034F8D)),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              const RoundedButtonWidget(),
               Container(
                 padding:
                     const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
@@ -78,7 +48,15 @@ class TransfersView extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
+                  ),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
                 ]),
               )
             ],
