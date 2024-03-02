@@ -1,161 +1,206 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
+import 'package:flutter/services.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 
-class cash_express extends StatelessWidget {
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //Se cambió Center a Scaffold y child a body
-    return Scaffold(
-      //Se agregó el AppBarWidget
-      appBar: const AppBarWidget(titleAppBar: "Retiro sin tarjeta"),
-      //Se agregó un ListView
-      body: ListView(children: [
-        Container(
-          //Se centro con left y right
-          padding: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
-          child: Container(
-            width: MediaQuery.of(context).size.width * 0.9,
-            height: 210,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                  colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight),
-              borderRadius: BorderRadius.circular(15.0),
-            ),
+    return MaterialApp(
+      title: 'Retiro sin Tarjeta',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBarWidget(titleAppBar: "Retiro sin Tarjeta"),
+        body: SafeArea(
+          child: Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  alignment: AlignmentDirectional.centerStart,
-                  padding:
-                      const EdgeInsets.only(left: 25.0, top: 10.0, right: 25.0),
-                  child: Column(
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
                     children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Tu Saldo Disponible',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20.0),
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "\$ 32,524",
-                                    style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontSize: 30.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                  const Text(
-                                    '36',
-                                    style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                  IconButton(
-                                      onPressed: () {},
-                                      icon: const Icon(
-                                        Icons.visibility_off,
-                                        color: Color(0xFFA3A4A6),
-                                        size: 26.0,
-                                      ))
-                                ],
-                              )
-                            ],
-                          ),
-                          const Spacer(),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SvgPicture.asset(
-                                'assets/images/mc_symbol.svg',
-                                height: 63,
-                                width: 89,
-                              )
-                            ],
-                          )
-                        ],
+                      Icon(
+                        Icons.arrow_back,
+                        size: 32,
+                        color: Colors.black,
                       ),
-                      Container(
-                        padding: const EdgeInsets.only(
-                          top: 25.0,
+                      SizedBox(width: 8),
+                      Text(
+                        'Retiro sin Tarjeta',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ServiceIconButton(
-                              title1: 'Transferir',
-                              title2: '',
-                              icon: const Icon(
-                                Icons.arrow_back,
-                                color: Color(0xFF034F8D),
-                              ),
-                              bgColor: const Color(0xFFFAFAFA),
-                              fgColor: Colors.white,
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const TransfersView()));
-                              },
-                            ),
-                            ServiceIconButton(
-                              title1: "Retiro sin",
-                              title2: "Tarjeta",
-                              icon: const Icon(
-                                Icons.send_to_mobile,
-                                color: Color(0xFF034F8D),
-                              ),
-                              bgColor: const Color(0xFFFAFAFA),
-                              fgColor: const Color(0xFFFAFAFA),
-                              onTap: () {},
-                            ),
-                            ServiceIconButton(
-                              title1: "Pago de",
-                              title2: "Servicio",
-                              icon: const Icon(
-                                Icons.electrical_services_outlined,
-                                color: Color(0xFF034F8D),
-                              ),
-                              bgColor: const Color(0xFFFAFAFA),
-                              fgColor: const Color(0xFFFAFAFA),
-                              onTap: () {},
-                            ),
-                            ServiceIconButton(
-                                title1: "Estado de",
-                                title2: "Cuenta",
-                                icon: const Icon(
-                                  Icons.description,
-                                  color: Color(0xFF034F8D),
-                                ),
-                                bgColor: const Color(0xFFFAFAFA),
-                                fgColor: const Color(0xFFFAFAFA),
-                                onTap: () {}),
-                          ],
-                        ),
-                      )
+                      ),
                     ],
                   ),
+                ),
+                SizedBox(height: 20),
+                Center(
+                  child: Container(
+                    width: 390,
+                    height: 222,
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1A2D4D),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '**** **** **** 1284',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          'Tu saldo Disponible',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '\$40,000',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(width: 4),
+                            Icon(
+                              Icons.remove_red_eye,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          'Vencimiento:',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          '05/27',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            'CVV: 366',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    'Importe',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '\$',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                      ),
+                    ),
+                    SizedBox(width: 4),
+                    Container(
+                      width: 150,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                          ThousandsSeparatorInputFormatter(),
+                          TextInputFormatter.withFunction((oldValue, newValue) {
+                            if (newValue.text.isEmpty) return newValue;
+                            final value = int.parse(newValue.text.replaceAll(',', ''));
+                            if (value > 60000) {
+                              // Muestra un mensaje de error si la cantidad excede los $60,000
+                              return oldValue;
+                            }
+                            return newValue;
+                          }),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 40),
+                Expanded(
+                  child: Container(), // Espacio expansivo para empujar el botón hacia abajo
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Acción cuando se presiona el botón
+                  },
+                  child: Text("Continuar"),
+                ),
+                const SizedBox(
+                  height: 20.0,
                 ),
               ],
             ),
           ),
         ),
-        //Se agregó el Widget para subtitulos
-        const SubtitleWidget(subtitleText: "Importe")
-      ]),
+      ),
     );
   }
 }
+
+class ThousandsSeparatorInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+    if (newValue.selection.baseOffset == 0) {
+      return newValue;
+    }
+    int? value = int.tryParse(newValue.text.replaceAll(',', ''));
+    final formatter = NumberFormat("#,###");
+    String newText = formatter.format(value);
+    return newValue.copyWith(
+      text: newText,
+      selection: TextSelection.collapsed(offset: newText.length),
+    );
+  }
+}
+
+NumberFormat(String s) {
+}
+
