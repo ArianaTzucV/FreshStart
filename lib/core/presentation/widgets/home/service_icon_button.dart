@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/styles.dart';
 
 class ServiceIconButton extends StatelessWidget {
   final String title1;
@@ -33,22 +34,16 @@ class ServiceIconButton extends StatelessWidget {
               children: [icon],
             ),
           ),
-          Text(
-            title1,
-            style: TextStyle(
-                fontSize: 12.0,
-                fontFamily: 'MarkPro',
-                fontWeight: FontWeight.normal,
-                color: fgColor),
+          TextMarkProRegular(
+            text: title1,
+            size: 12.0,
+            color: fgColor,
           ),
-          Text(
-            title2,
-            style: TextStyle(
-                fontSize: 12.0,
-                fontFamily: 'MarkPro',
-                fontWeight: FontWeight.normal,
-                color: fgColor),
-          )
+          TextMarkProRegular(
+            text: title2,
+            size: 12.0,
+            color: fgColor,
+          ),
         ],
       ),
     );
