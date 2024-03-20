@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
           height: screenHeight,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('../assets/images/LoginFreshBank.png'), fit: BoxFit.cover),
+                image: AssetImage('assets/images/LoginFreshBank.png'), fit: BoxFit.cover),
           ),
           child: Center(
             child: Column(
