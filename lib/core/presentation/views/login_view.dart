@@ -19,7 +19,8 @@ class _LoginPageState extends State<LoginPage> {
     try {
       authenticated = await _localAuthentication.authenticate(
         localizedReason: "Autentícate para acceder",
-        options: const AuthenticationOptions(stickyAuth: true, useErrorDialogs: true),
+        options: const AuthenticationOptions(
+            stickyAuth: true, useErrorDialogs: true),
       );
     } catch (e) {
       print(e);
@@ -39,24 +40,25 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Utilizar MediaQuery para obtener dimensiones y ajustar el diseño dinámicamente
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: SingleChildScrollView( // Permite el scroll si el contenido no cabe en la pantalla
+      body: SingleChildScrollView(
         child: Container(
           height: screenHeight,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/LoginFreshBank.png'), fit: BoxFit.cover),
+                image: AssetImage('assets/images/LoginFreshBank.png'),
+                fit: BoxFit.cover),
           ),
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: screenHeight * 0.3), // Usa porcentaje del alto de la pantalla
+                SizedBox(height: screenHeight * 0.3),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.1, vertical: 20.0), // Usa porcentaje del ancho de la pantalla
+                  margin: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.1, vertical: 20.0),
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     color: colorPanel,
@@ -65,15 +67,15 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextField(
+                      const TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Correo',
                           suffixIcon: Icon(Icons.email),
                         ),
                       ),
-                      SizedBox(height: 20.0),
-                      TextField(
+                      const SizedBox(height: 20.0),
+                      const TextField(
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -81,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                           suffixIcon: Icon(Icons.visibility_off),
                         ),
                       ),
-                      SizedBox(height: 30.0),
+                      const SizedBox(height: 30.0),
                       Center(
                         child: Column(
                           children: [
@@ -97,12 +99,14 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             GestureDetector(
                               onTap: _auth,
-                              child: const GeneralButtonWidget(text: 'Iniciar Sesión'),
+                              child: const GeneralButtonWidget(
+                                  text: 'Iniciar Sesión'),
                             ),
-                            SizedBox(height: 35.0),
+                            const SizedBox(height: 35.0),
                             GestureDetector(
                               onTap: () {},
-                              child: const GeneralButtonWidget(text: 'Registrarse'),
+                              child: const GeneralButtonWidget(
+                                  text: 'Registrarse'),
                             ),
                             const Text("O"),
                             IconButton(

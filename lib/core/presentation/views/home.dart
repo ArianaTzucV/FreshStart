@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_start/styles.dart';
@@ -6,7 +8,6 @@ import 'package:fresh_start/core/presentation/views/Services%20Payment/services_
 import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
 import 'package:fresh_start/core/presentation/widgets/home/home_card.dart';
 import 'package:fresh_start/core/presentation/widgets/home/other_service_service.dart';
-
 import '../widgets/home/service_icon_button.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,6 +15,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: colorBackground,
@@ -73,7 +76,7 @@ class HomePage extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              padding: const EdgeInsets.only(top: 30.0),
+              padding: const EdgeInsets.only(top: 12.0),
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: 210,
@@ -222,7 +225,7 @@ class HomePage extends StatelessWidget {
           Center(
             child: Container(
               padding:
-                  const EdgeInsets.only(left: 25.0, top: 30.0, right: 25.0),
+                  const EdgeInsets.only(left: 20.0, top: 12.0, right: 20.0),
               child: Column(
                 children: [
                   Row(

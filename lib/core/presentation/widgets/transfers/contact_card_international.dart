@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/second_national_transfers.dart';
+import 'package:fresh_start/core/presentation/views/Transfers/International%20Transfers/second_international_transfert.dart';
 import 'package:fresh_start/styles.dart';
 
-class ContactCard extends StatelessWidget {
-  const ContactCard({
+class ContactCardInternatioanl extends StatelessWidget {
+  const ContactCardInternatioanl({
     super.key,
   });
 
@@ -89,8 +89,10 @@ class ContactCard extends StatelessWidget {
             ],
           )),
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const SecondNationalView()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const SecondInternationalView()));
       },
     );
   }
