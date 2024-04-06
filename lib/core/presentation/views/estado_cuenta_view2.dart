@@ -9,7 +9,6 @@ class EstadoDeCuentaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: EstadoDeCuentaBody(),
@@ -90,7 +89,7 @@ class EstadoDeCuentaBody extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 70),
+        SizedBox(height: 30),
         Expanded(
           child: ListView.builder(
             itemCount: 1,
