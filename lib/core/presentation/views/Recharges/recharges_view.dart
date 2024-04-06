@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fresh_start/colors.dart';
 import 'package:fresh_start/core/presentation/views/Recharges/service__number.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
-import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
+// import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 
 class RechargesView extends StatelessWidget {
   const RechargesView({Key? key}) : super(key: key);
@@ -136,7 +136,7 @@ class SubtitleWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         subtitleText,
-        
+
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     );
