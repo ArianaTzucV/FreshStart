@@ -60,7 +60,7 @@ class EstadoDeCuentaBody extends StatelessWidget {
               'Detalle de',
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             ),
-            SizedBox(width: 110),
+            SizedBox(width: 70),
             Text(
               'Fresh',
               style: TextStyle(
