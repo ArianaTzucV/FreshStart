@@ -136,6 +136,7 @@ class SubtitleWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         subtitleText,
+        
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     );
