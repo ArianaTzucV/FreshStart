@@ -143,7 +143,6 @@ class SubtitleWidget extends StatelessWidget {
 }
 
 
-
 // Widget buildButtonRow(List<Widget> buttons) {
 //   return Row(
 //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
