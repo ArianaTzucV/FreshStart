@@ -38,7 +38,6 @@ class AddNewContactView extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8.0),
                       TextField(
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -49,7 +48,16 @@ class AddNewContactView extends StatelessWidget {
                         ],
                         keyboardType: TextInputType.number,
                       ),
-                      const SizedBox(height: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 4, left: 304.0),
+                        child: Text(
+                          '0/18',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
                       const Text(
                         'Entidad Bancaria',
                         style: TextStyle(
@@ -58,7 +66,6 @@ class AddNewContactView extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8.0),
                       TextField(
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -69,7 +76,16 @@ class AddNewContactView extends StatelessWidget {
                         ],
                         keyboardType: TextInputType.text,
                       ),
-                      const SizedBox(height: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 4, left: 304.0),
+                        child: Text(
+                          '0/50',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
                       const Text(
                         'Nombre',
                         style: TextStyle(
@@ -78,7 +94,6 @@ class AddNewContactView extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8.0),
                       TextField(
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -89,8 +104,15 @@ class AddNewContactView extends StatelessWidget {
                         ],
                         keyboardType: TextInputType.text,
                       ),
-                      const SizedBox(
-                        height: 8.0,
+                      const Padding(
+                        padding: EdgeInsets.only(top: 4, left: 304.0),
+                        child: Text(
+                          '0/50',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400),
+                        ),
                       ),
                       const Text(
                         'Apodo',
@@ -100,7 +122,6 @@ class AddNewContactView extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8.0),
                       TextField(
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -111,11 +132,21 @@ class AddNewContactView extends StatelessWidget {
                         ],
                         keyboardType: TextInputType.text,
                       ),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 4, left: 304.0),
+                        child: Text(
+                          '0/18',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 120.0),
+              const SizedBox(height: 90.0),
               const Center(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 25.0),
