@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_start/colors.dart';
+import 'package:fresh_start/styles.dart';
 
 class HomeCard extends StatelessWidget {
   const HomeCard({
@@ -8,6 +8,8 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
         margin: const EdgeInsets.only(top: 10.0, bottom: 7.5),
         decoration: BoxDecoration(
