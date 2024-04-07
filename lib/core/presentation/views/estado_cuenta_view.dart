@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/estado_cuenta_view2.dart';
 
 void main() {
-  runApp(EstadoDeCuentaWidget());
+  runApp(EstadoDeCuentaWidget1());
 }
 
-class EstadoDeCuentaWidget extends StatelessWidget {
+class EstadoDeCuentaWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,9 +34,9 @@ class EstadoDeCuentaBody extends StatelessWidget {
                 color: Colors.black,
                 size: 24,
               ),
-              onPressed: () {
-                // Aquí puedes definir la función a ejecutar cuando se presione el botón de flecha
-              },
+                onPressed: () {
+                  //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ()));
+                },
             ),
             Expanded(
               flex: 10,
@@ -81,7 +82,7 @@ class EstadoDeCuentaBody extends StatelessWidget {
               '° 1111',
               style: TextStyle(fontSize: 10, color: Colors.grey.shade700),
             ),
-            SizedBox(width: 10),
+            SizedBox(width: 15),
             Text(
               'Saldo disponible',
               style: TextStyle(fontSize: 8, color: Colors.grey.shade700),
@@ -97,58 +98,64 @@ class EstadoDeCuentaBody extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Expanded(
-          child: ListView.builder(
-            itemCount: 7,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(bottom: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.grey.shade200),
-                ),
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+  child: ListView.builder(
+    itemCount: 7,
+    itemBuilder: (context, index) {
+      return Padding(
+        padding: EdgeInsets.symmetric(vertical: 10), // Agregar un espacio vertical entre los botones
+        child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget()));
+                },
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.zero,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: BorderSide(color: Colors.grey.shade200),
+            ),
+          ),
+          child: Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '0001TJ0117',
-                          style: TextStyle(fontSize: 15, color: Colors.grey.shade700),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              '-\$2,500.00',
-                              style: TextStyle(fontSize: 15, color: Colors.black),
-                            ),
-                          ],
-                        ),
-                      ],
+                    Text(
+                      '0001TJ0117',
+                      style: TextStyle(fontSize: 15, color: Colors.grey.shade700),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '°  1111',
-                          style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          '20-01-2024  10:00PM',
-                          style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
-                        ),
-                      ],
+                    Text(
+                      '-\$2,500.00',
+                      style: TextStyle(fontSize: 15, color: Colors.black),
                     ),
                   ],
                 ),
-              );
-            },
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '°  1111',
+                      style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
+                    ),
+                    Text(
+                      '20-01-2024  10:00PM',
+                      style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
+      );
+    },
+  ),
+),
       ],
     );
   }

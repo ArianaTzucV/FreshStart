@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
 
 void main() {
   runApp(EstadoDeCuentaWidget());
@@ -33,9 +34,9 @@ class EstadoDeCuentaBody extends StatelessWidget {
                 color: Colors.black,
                 size: 24,
               ),
-              onPressed: () {
-                // Aquí puedes definir la función a ejecutar cuando se presione el botón de flecha
-              },
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget1()));
+                },
             ),
             Expanded(
               flex: 10,
@@ -233,9 +234,9 @@ class EstadoDeCuentaBody extends StatelessWidget {
         ),
         Center(
           child: ElevatedButton(
-            onPressed: () {
-              // Acción al presionar el botón
-            },
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget1()));
+                },
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(horizontal: 130, vertical: 20),
               shape: RoundedRectangleBorder(
