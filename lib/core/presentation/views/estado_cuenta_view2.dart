@@ -238,11 +238,10 @@ class EstadoDeCuentaBody extends StatelessWidget {
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget1()));
                 },
             style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 130, vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 130, vertical: 20), backgroundColor: Color.fromARGB(255, 5, 31, 70),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              primary: Color.fromARGB(255, 5, 31, 70),
             ),
             child: Text(
               'Salir',
