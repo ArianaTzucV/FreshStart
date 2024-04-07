@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
+import 'package:fresh_start/core/presentation/widgets/estado_cuenta.dart';
 import 'package:fresh_start/styles.dart';
 import 'package:fresh_start/core/presentation/views/Cash%20Express/cash_express_view.dart';
 import 'package:fresh_start/core/presentation/views/Services%20Payment/services_payment_view.dart';
@@ -209,7 +211,13 @@ class HomePage extends StatelessWidget {
                                     ),
                                     bgColor: colorPanel,
                                     fgColor: colorPanel,
-                                    onTap: () {}),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  EstadoDeCuentaWidget1()));
+                                    }),
                               ],
                             ),
                           )

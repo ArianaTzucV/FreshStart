@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/views/estado_cuenta_view2.dart';
 
-void main() {
-  runApp(EstadoDeCuentaWidget1());
-}
-
 class EstadoDeCuentaWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: EstadoDeCuentaBody(),
         ),
-      ),
-    );
+      );
   }
 }
 
