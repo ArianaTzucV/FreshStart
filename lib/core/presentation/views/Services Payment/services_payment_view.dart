@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-// void main() {
-//   runApp(EstadoDeCuentaWidget());
-// }
+void main() {
+  runApp(EstadoDeCuentaWidget());
+}
 
 class EstadoDeCuentaWidget extends StatelessWidget {
   @override
