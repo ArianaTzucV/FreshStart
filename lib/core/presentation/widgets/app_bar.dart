@@ -16,12 +16,12 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             fontWeight: FontWeight.w700,
             color: Color(0xFF060912)),
       ),
-      backgroundColor: Color(0xFFF0F2F5),
+      backgroundColor: const Color(0xFFF0F2F5),
       leading: GestureDetector(
         onTap: () {
           Navigator.pop(context);
         },
-        child: Icon(
+        child: const Icon(
           Icons.arrow_back_ios,
           size: 34.0,
         ),
@@ -30,6 +30,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
