@@ -196,10 +196,10 @@ class HomePage extends StatelessWidget {
                                   bgColor: colorPanel,
                                   fgColor: colorPanel,
                                   onTap: () {
-                                    Navigator.push(
+                                    /*Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => CodiaPage()));
+                                            builder: (context) => CodiaPage()));*/
                                   },
                                 ),
                                 ServiceIconButton(
