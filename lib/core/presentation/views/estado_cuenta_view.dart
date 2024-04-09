@@ -1,156 +1,114 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_start/core/presentation/views/estado_cuenta_view2.dart';
+import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
+import 'package:fresh_start/core/presentation/widgets/estado_cuenta/status.dart';
+import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 
 class EstadoDeCuentaWidget1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: EstadoDeCuentaBody(),
-        ),
-      );
-  }
-}
+  const EstadoDeCuentaWidget1({super.key});
 
-class EstadoDeCuentaBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-                size: 24,
+    return const Scaffold(
+      appBar: AppBarWidget(titleAppBar: 'Cuenta'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 16.0),
+              SubtitleWidget(subtitleText: 'Mi cuenta'),
+              SizedBox(
+                height: 8.0,
               ),
-                onPressed: () {
-                  //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ()));
-                },
-            ),
-            Expanded(
-              flex: 10,
-              child: Center(
-                child: Text(
-                  'Cuenta',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(),
-            ),
-          ],
-        ),
-        SizedBox(height: 15),
-        Row(
-          children: [
-            Text(
-              'Mi cuenta ',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              '0001TJ0117',
-              style: TextStyle(fontSize: 10, color: Colors.grey.shade700),
-            ),
-            SizedBox(width: 10),
-            Text(
-              '\$100,000,000.09',
-              style: TextStyle(fontSize: 10, color: Colors.grey.shade700),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              '° 1111',
-              style: TextStyle(fontSize: 10, color: Colors.grey.shade700),
-            ),
-            SizedBox(width: 15),
-            Text(
-              'Saldo disponible',
-              style: TextStyle(fontSize: 8, color: Colors.grey.shade700),
-            ),
-          ],
-        ),
-        SizedBox(height: 20),
-        Row(
-          children: [
-            Text(
-              'Mis Compras',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-        SizedBox(height: 10),
-        Expanded(
-  child: ListView.builder(
-    itemCount: 7,
-    itemBuilder: (context, index) {
-      return Padding(
-        padding: EdgeInsets.symmetric(vertical: 10), // Agregar un espacio vertical entre los botones
-        child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget()));
-                },
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-              side: BorderSide(color: Colors.grey.shade200),
-            ),
-          ),
-          child: Container(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+              Padding(
+                padding: EdgeInsets.only(top: 1, right: 20, left: 20),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       '0001TJ0117',
-                      style: TextStyle(fontSize: 15, color: Colors.grey.shade700),
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: 'MarkPro',
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF808080),
+                      ),
                     ),
+                    SizedBox(width: 10),
                     Text(
-                      '-\$2,500.00',
-                      style: TextStyle(fontSize: 15, color: Colors.black),
+                      '\$100,000,000.09',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF808080),
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20, left: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      '°  1111',
-                      style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
-                    ),
-                    Text(
-                      '20-01-2024  10:00PM',
-                      style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
+                      'Saldo disponible',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        fontFamily: 'MarkPro',
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF808080),
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20, left: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.circle_rounded,
+                      size: 10,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      '1111',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: 'MarkPro',
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF808080),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              SubtitleWidget(subtitleText: 'Mis compras'),
+              SizedBox(
+                height: 8.0,
+              ),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget(),
+              StatusWidget()
+            ],
           ),
         ),
-      );
-    },
-  ),
-),
-      ],
+      ),
     );
   }
 }

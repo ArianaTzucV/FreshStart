@@ -26,6 +26,14 @@ class NewContactView extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     color: const Color(0XFFFAFAFA),
+                    boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
                   ),
                   child: Column(
                     children: [

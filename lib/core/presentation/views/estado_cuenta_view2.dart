@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
 
-void main() {
-  runApp(EstadoDeCuentaWidget());
-}
-
 class EstadoDeCuentaWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -26,6 +26,14 @@ class AddNewContactView extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     color: const Color(0XFFFAFAFA),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,17 +54,8 @@ class AddNewContactView extends StatelessWidget {
                         inputFormatters: [
                           FilteringTextInputFormatter.digitsOnly
                         ],
-                        keyboardType: TextInputType.number,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 4, left: 304.0),
-                        child: Text(
-                          '0/18',
-                          style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w400),
-                        ),
+                        keyboardType: TextInputType.phone,
+                        maxLength: 18,
                       ),
                       const Text(
                         'Entidad Bancaria',
@@ -75,16 +74,7 @@ class AddNewContactView extends StatelessWidget {
                           FilteringTextInputFormatter.singleLineFormatter
                         ],
                         keyboardType: TextInputType.text,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 4, left: 304.0),
-                        child: Text(
-                          '0/50',
-                          style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w400),
-                        ),
+                        maxLength: 50,
                       ),
                       const Text(
                         'Nombre',
@@ -103,16 +93,7 @@ class AddNewContactView extends StatelessWidget {
                           FilteringTextInputFormatter.singleLineFormatter
                         ],
                         keyboardType: TextInputType.text,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 4, left: 304.0),
-                        child: Text(
-                          '0/50',
-                          style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w400),
-                        ),
+                        maxLength: 50,
                       ),
                       const Text(
                         'Apodo',
@@ -131,16 +112,7 @@ class AddNewContactView extends StatelessWidget {
                           FilteringTextInputFormatter.singleLineFormatter
                         ],
                         keyboardType: TextInputType.text,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 4, left: 304.0),
-                        child: Text(
-                          '0/18',
-                          style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w400),
-                        ),
+                        maxLength: 50,
                       ),
                     ],
                   ),

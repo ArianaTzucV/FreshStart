@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/rounded_button.dart';
 import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
@@ -71,7 +72,13 @@ class InternationalTrasnfersView extends StatelessWidget {
                       ),
                       const Spacer(),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EstadoDeCuentaWidget1()),
+                          );
+                        },
                         child: const Text(
                           "Ver todos(121)",
                           style: TextStyle(

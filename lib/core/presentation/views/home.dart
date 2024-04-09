@@ -183,7 +183,7 @@ class HomePage extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                CashExpress()));
+                                                const CashExpress()));
                                   },
                                 ),
                                 ServiceIconButton(
@@ -216,7 +216,7 @@ class HomePage extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  EstadoDeCuentaWidget1()));
+                                                  const EstadoDeCuentaWidget1()));
                                     }),
                               ],
                             ),
