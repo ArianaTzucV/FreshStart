@@ -196,10 +196,11 @@ class HomePage extends StatelessWidget {
                                   bgColor: colorPanel,
                                   fgColor: colorPanel,
                                   onTap: () {
-                                    /*Navigator.push(
+                                    Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => CodiaPage()));*/
+                                            builder: (context) =>
+                                                const EstadoDeCuentaWidget()));
                                   },
                                 ),
                                 ServiceIconButton(
@@ -244,11 +245,20 @@ class HomePage extends StatelessWidget {
                       ),
                       const Spacer(),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const EstadoDeCuentaWidget1(),
+                            ),
+                          );
+                        },
                         child: const TextMarkProMedium(
-                            text: 'Ver todos',
-                            size: 15.0,
-                            color: colorPrimaryComplementary),
+                          text: 'Ver todos',
+                          size: 15.0,
+                          color: colorPrimaryComplementary,
+                        ),
                       )
                     ],
                   ),

@@ -83,40 +83,137 @@ class SecondInternationalView extends StatelessWidget {
                       ),
                       const SizedBox(height: 12.0),
                       const Text(
-                        'Monto',
+                        'Divisa',
                         style: TextStyle(
                           fontFamily: 'MarkPro',
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Text(
-                        'Selecciona la divisa y su monto',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontFamily: 'MarkPro',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
                       const SizedBox(height: 4.0),
-                      ContainerAmountWidget(
-                        value: selectedAmount,
-                        items: const ['EUR', 'USD', 'MXN'],
-                        onChanged: (String? newValue) {
-                          if (newValue != null) {
-                            selectedAmount = newValue;
-                          }
-                        },
-                        secondValue: selectedBank,
-                        secondItems: const ['FreshBank', 'MazeBank'],
-                        secondOnChanged: (String? newValue) {
-                          if (newValue != null) {
-                            selectedAmount = newValue;
-                          }
-                        },
+                      DropdownButtonFormField<String>(
+                        items: ["EUR", "USD", "MXM"].map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 12.0, horizontal: 16.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: const BorderSide(color: Colors.black),
+                          ),
+                        ),
+                        onChanged: (String? value) {},
                       ),
                       const SizedBox(
-                        height: 12.0,
+                        height: 16.0,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Equivalente",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'MarkPro',
+                              color: colorMainText,
+                            ),
+                          ),
+                          Text(
+                            "\$18,477.89 MXN",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Roboto',
+                              color: colorSecondaryText,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Comisión Bancaria",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'MarkPro',
+                              color: colorMainText,
+                            ),
+                          ),
+                          Text(
+                            "\$1,800.00 MXN + IVA",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Roboto',
+                              color: colorSecondaryText,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Tasa de Cambio",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'MarkPro',
+                              color: colorMainText,
+                            ),
+                          ),
+                          Text(
+                            "€1 = 18.47",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Roboto',
+                              color: colorSecondaryText,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Total a Descontar",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'MarkPro',
+                              color: colorMainText,
+                            ),
+                          ),
+                          Text(
+                            "\$23,522.35",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Roboto',
+                              color: colorMainText,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 4.0,
                       ),
                       const Text(
                         'Concepto',
@@ -141,7 +238,7 @@ class SecondInternationalView extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 65.0),
+              const SizedBox(height: 8.0),
               const Center(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 25.0),

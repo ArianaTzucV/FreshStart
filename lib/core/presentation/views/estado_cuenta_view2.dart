@@ -1,254 +1,236 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
+import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
+import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
+import 'package:fresh_start/styles.dart';
 
 class EstadoDeCuentaWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: EstadoDeCuentaBody(),
-        ),
-      ),
-    );
-  }
-}
+  const EstadoDeCuentaWidget({super.key});
 
-class EstadoDeCuentaBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-                size: 24,
-              ),
-                onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget1()));
-                },
-            ),
-            Expanded(
-              flex: 10,
-              child: Center(
-                child: Text(
-                  'Cuenta',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(),
-            ),
-          ],
-        ),
-        SizedBox(height: 30),
-        Row(
-          children: [
-            SizedBox(width: 25),
-            Text(
-              'Detalle de',
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(width: 70),
-            Text(
-              'Fresh',
-              style: TextStyle(
-                fontFamily: 'Calor',
-                color: Color.fromARGB(255, 5, 31, 70),
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
-            ),
-            Text(
-              'Bank',
-              style: TextStyle(
-                fontFamily: 'Calor',
-                color: Colors.blue[500],
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            SizedBox(width: 25),
-            Text(
-              'Pago',
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-        SizedBox(height: 30),
-        Expanded(
-          child: ListView.builder(
-            itemCount: 1,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(bottom: 500),
+    return Scaffold(
+      appBar: const AppBarWidget(titleAppBar: 'Cuenta'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SubtitleWidget(subtitleText: 'Detalle de Pago'),
+              const SizedBox(height: 36.0),
+              Container(
+                padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Color.fromARGB(255, 238, 238, 238)),
-                ),
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'FreshBank',
-                          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 0, 0, 0)),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.check_circle,
-                          color: Color.fromARGB(126, 38, 131, 41),
-                          size: 70,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '¡Pago exitoso!',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 0, 0, 0)),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '-\$ 53,600',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 0, 0, 0)),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '06 ENE, 2024 -- 18:15 ',
-                          style: TextStyle(fontSize: 9, color: Colors.grey.shade700),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 25),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(width: 10),
-                        Text(
-                          '217197305',
-                          style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Factura',
-                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 0, 0, 0)),
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          'Electrificadora',
-                          style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(width: 10),
-                        Text(
-                          'del Huila',
-                          style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Comprobante',
-                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 0, 0, 0)),
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          '000001810',
-                          style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 45),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Pagasten con',
-                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 0, 0, 0)),
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          'Ahorros',
-                          style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(width: 10),
-                        Text(
-                          '****6705',
-                          style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
-                        ),
-                      ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
-              );
-            },
-          ),
-        ),
-        Center(
-          child: ElevatedButton(
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "FreshBank",
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'MarkPro',
+                        color: Color(0xFF060912),
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    CircleAvatar(
+                      backgroundColor: Color(0xFF20B087),
+                      radius: 50,
+                      child: Icon(
+                        Icons.check,
+                        size: 70,
+                        color: Color(0XFFFAFAFA),
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      '¡Pago exitoso!',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'MarkPro',
+                        color: Color(0xFF060912),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Text(
+                      '\$-53,600',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto',
+                        color: colorMainText,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Text(
+                      '06 ENE, 2024 -- 18:15',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'MarkPro',
+                        color: Color(0XFF696969),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Factura",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'MarkPro',
+                            color: colorMainText,
+                          ),
+                        ),
+                        Text(
+                          "217197305 ",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto',
+                            color: Color(0xFF696969),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 160),
+                          child: Text(
+                            "Electrificadora del Huila",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Roboto',
+                              color: Color(0xFF696969),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Comprobante",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'MarkPro',
+                            color: colorMainText,
+                          ),
+                        ),
+                        Text(
+                          "000001810",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto',
+                            color: Color(0xFF696969),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Pagaste con",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'MarkPro',
+                            color: colorMainText,
+                          ),
+                        ),
+                        Text(
+                          "Ahorros",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto',
+                            color: Color(0xFF696969),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 267),
+                          child: Text(
+                            "****6705",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Roboto',
+                              color: Color(0xFF696969),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 12.0,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 60.0,
+              ),
+              ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EstadoDeCuentaWidget1()));
+                  Navigator.of(context).pop();
                 },
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 130, vertical: 20), backgroundColor: Color.fromARGB(255, 5, 31, 70),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xFF1A2D4D),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 18.0, horizontal: 145.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                ),
+                child: const Text(
+                  "Salir",
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'MarkPro'),
+                ),
               ),
-            ),
-            child: Text(
-              'Salir',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-              ),
-            ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }
