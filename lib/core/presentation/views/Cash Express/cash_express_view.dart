@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:fresh_start/core/presentation/views/Transfers/add_new_contact.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/general_button.dart';
@@ -22,7 +23,7 @@ class CashExpress extends StatelessWidget {
               Center(
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.9,
-                  height: 228,
+                  height: 261,
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
@@ -31,19 +32,28 @@ class CashExpress extends StatelessWidget {
                         end: Alignment.topRight),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  child: const Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '**** **** **** 1284',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Roboto'),
+                      Row(
+                        children: [
+                          const Text(
+                            '**** **** **** 1284',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Roboto'),
+                          ),
+                           SvgPicture.asset(
+                                    'assets/images/mc_symbol.svg',
+                                    height: 63,
+                                    width: 89,
+                                  )
+                        ],
                       ),
-                      SizedBox(height: 12.0),
-                      Text(
+                      const SizedBox(height: 12.0),
+                      const Text(
                         'Tu saldo Disponible',
                         style: TextStyle(
                             color: Colors.white,
@@ -51,8 +61,8 @@ class CashExpress extends StatelessWidget {
                             fontFamily: 'MarkPro',
                             fontWeight: FontWeight.w400),
                       ),
-                      SizedBox(height: 12.0),
-                      Row(
+                      const SizedBox(height: 12.0),
+                      const Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextRobotoBold(
@@ -73,8 +83,8 @@ class CashExpress extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 12.0),
-                      Row(
+                      const SizedBox(height: 12.0),
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -93,10 +103,10 @@ class CashExpress extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 12.0,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -146,7 +156,7 @@ class CashExpress extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(height: 200),
+              const SizedBox(height: 171),
               ElevatedButton(
                 onPressed: () {
                   _showBottomSheet(context);
