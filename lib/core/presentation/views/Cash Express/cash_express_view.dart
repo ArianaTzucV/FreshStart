@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:fresh_start/core/presentation/views/Transfers/add_new_contact.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/general_button.dart';
+import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 import 'package:fresh_start/styles.dart';
 
 class CashExpress extends StatelessWidget {
@@ -20,12 +21,15 @@ class CashExpress extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Container(
-                  width: 390,
-                  height: 222,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 228,
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF034F8D),
-                    borderRadius: BorderRadius.circular(16),
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                   child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,90 +37,102 @@ class CashExpress extends StatelessWidget {
                       Text(
                         '**** **** **** 1284',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto'),
                       ),
-                      SizedBox(height: 8),
+                      SizedBox(height: 12.0),
                       Text(
                         'Tu saldo Disponible',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'MarkPro',
+                            fontWeight: FontWeight.w400),
                       ),
+                      SizedBox(height: 12.0),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextRobotoBold(
+                            text: '\$ 32,524',
+                            size: 30.0,
+                            color: Colors.white,
+                          ),
+                          TextRobotoBold(
+                            text: '36',
+                            size: 15.0,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 12),
+                          Icon(
+                            Icons.visibility_off,
+                            color: colorTertearyText,
+                            size: 26.0,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 12.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '\$40,000',
+                            'Vencimiento',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(width: 4),
-                          Icon(
-                            Icons.remove_red_eye,
-                            color: Colors.white,
+                          Text(
+                            'CVV',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Vencimiento:',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
+                      SizedBox(
+                        height: 12.0,
                       ),
-                      Text(
-                        '05/27',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          'CVV: 366',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '05/27',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
+                          Text(
+                            '366',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
               ),
               const SizedBox(height: 40),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(
-                  'Importe',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 8),
+              const SubtitleWidget(subtitleText: 'Importe'),
+              const SizedBox(height: 22),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
                     '\$',
                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 24,
-                    ),
+                        color: Color(0xFF060912),
+                        fontSize: 40,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(width: 4),
                   Container(
-                    width: 150,
+                    width: 125,
                     child: TextFormField(
                       decoration: const InputDecoration(
                         border: InputBorder.none,
@@ -124,25 +140,11 @@ class CashExpress extends StatelessWidget {
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly,
-                        ThousandsSeparatorInputFormatter(),
-                        TextInputFormatter.withFunction((oldValue, newValue) {
-                          if (newValue.text.isEmpty) return newValue;
-                          final value =
-                              int.parse(newValue.text.replaceAll(',', ''));
-                          if (value > 60000) {
-                            return oldValue;
-                          }
-                          return newValue;
-                        }),
                       ],
+                      style: const TextStyle(fontSize: 40),
                     ),
-                  ),
+                  )
                 ],
-              ),
-              const SizedBox(height: 40),
-              Expanded(
-                child:
-                    Container(), 
               ),
               Expanded(
                 child: Container(),
@@ -161,9 +163,6 @@ class CashExpress extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20.0,
-              ),
             ],
           ),
         ),
@@ -171,22 +170,3 @@ class CashExpress extends StatelessWidget {
     );
   }
 }
-
-class ThousandsSeparatorInputFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-    if (newValue.selection.baseOffset == 0) {
-      return newValue;
-    }
-    int? value = int.tryParse(newValue.text.replaceAll(',', ''));
-    final formatter = NumberFormat("#,###");
-    String newText = formatter.format(value);
-    return newValue.copyWith(
-      text: newText,
-      selection: TextSelection.collapsed(offset: newText.length),
-    );
-  }
-}
-
-NumberFormat(String s) {}
