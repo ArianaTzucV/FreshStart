@@ -45,11 +45,14 @@ class CashExpress extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'Roboto'),
                           ),
-                           SvgPicture.asset(
-                                    'assets/images/mc_symbol.svg',
-                                    height: 63,
-                                    width: 89,
-                                  )
+                          const SizedBox(
+                            width: 60.0,
+                          ),
+                          SvgPicture.asset(
+                            'assets/images/mc_symbol.svg',
+                            height: 63,
+                            width: 89,
+                          )
                         ],
                       ),
                       const SizedBox(height: 12.0),

@@ -199,7 +199,7 @@ class HomePage extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const EstadoDeCuentaWidget()));
+                                                const ServicePaymentView()));
                                   },
                                 ),
                                 ServiceIconButton(
