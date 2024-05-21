@@ -1,14 +1,13 @@
 class RechargeModel {
-  int phone_number;
-  String pay_with;
-  String recharge_type;
-  double amount;
+  int phoneNumber;
+  String payWith;
+  String rechargeType;
+  double sentAmount;
 
   RechargeModel({
-    required this.phone_number,
-    required this.pay_with,
-    required this.recharge_type,
-    required this.amount,
+    required this.phoneNumber,
+    required this.payWith,
+    required this.rechargeType,
+    required this.sentAmount,
   });
 }
-
