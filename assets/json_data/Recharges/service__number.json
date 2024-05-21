@@ -1,0 +1,20 @@
+{
+
+    "rechargesid": 1,
+    "chooseList": {
+        "nameCard": "FreshBank"
+    },
+    "phonenumber":{
+        "phonenumberdata": "9982642802"
+    },
+    "paywith":{
+        "paywithdata": "FreshStar"
+    },
+    "rechargetype":{
+        "rechargetypedata": "Tiempo Aire"
+    },
+    "sent_amount":{
+        "amountdata": "50"
+    }
+    
+}
