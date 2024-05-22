@@ -1,152 +1,491 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_start/core/presentation/views/Transfers/National%20Transfers/transfers_view.dart';
-import '../../widgets/home/service_icon_button.dart';
+import 'package:fresh_start/core/presentation/views/Transfers/add_new_contact.dart';
+import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
+import 'package:fresh_start/core/presentation/widgets/general_button.dart';
+import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
+import 'package:fresh_start/styles.dart';
 
-class cash_express extends StatelessWidget {
+class CashExpress extends StatelessWidget {
+  const CashExpress({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        padding: const EdgeInsets.only(top: 30.0),
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.9,
-          height: 210,
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-                colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight),
-            borderRadius: BorderRadius.circular(15.0),
-          ),
+    return Scaffold(
+      appBar: const AppBarWidget(titleAppBar: "Retiro sin Tarjeta"),
+      body: SafeArea(
+        child: Center(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                alignment: AlignmentDirectional.centerStart,
-                padding:
-                    const EdgeInsets.only(left: 25.0, top: 10.0, right: 25.0),
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Tu Saldo Disponible',
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 20.0),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "\$ 32,524",
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 30.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                                const Text(
-                                  '36',
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(
-                                      Icons.visibility_off,
-                                      color: Color(0xFFA3A4A6),
-                                      size: 26.0,
-                                    ))
-                              ],
-                            )
-                          ],
-                        ),
-                        const Spacer(),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/images/mc_symbol.svg',
-                              height: 63,
-                              width: 89,
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(
-                        top: 25.0,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              const SizedBox(height: 20),
+              Center(
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 261,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
                         children: [
-                          ServiceIconButton(
-                            title1: 'Transferir',
-                            title2: '',
-                            icon: const Icon(
-                              Icons.arrow_back,
-                              color: Color(0xFF034F8D),
-                            ),
-                            bgColor: const Color(0xFFFAFAFA),
-                            fgColor: Colors.white,
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const TransfersView()));
-                            },
+                          const Text(
+                            '**** **** **** 1284',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Roboto'),
                           ),
-                          ServiceIconButton(
-                            title1: "Retiro sin",
-                            title2: "Tarjeta",
-                            icon: const Icon(
-                              Icons.send_to_mobile,
-                              color: Color(0xFF034F8D),
-                            ),
-                            bgColor: const Color(0xFFFAFAFA),
-                            fgColor: const Color(0xFFFAFAFA),
-                            onTap: () {},
+                          const SizedBox(
+                            width: 60.0,
                           ),
-                          ServiceIconButton(
-                            title1: "Pago de",
-                            title2: "Servicio",
-                            icon: const Icon(
-                              Icons.electrical_services_outlined,
-                              color: Color(0xFF034F8D),
-                            ),
-                            bgColor: const Color(0xFFFAFAFA),
-                            fgColor: const Color(0xFFFAFAFA),
-                            onTap: () {},
-                          ),
-                          ServiceIconButton(
-                              title1: "Estado de",
-                              title2: "Cuenta",
-                              icon: const Icon(
-                                Icons.description,
-                                color: Color(0xFF034F8D),
-                              ),
-                              bgColor: const Color(0xFFFAFAFA),
-                              fgColor: const Color(0xFFFAFAFA),
-                              onTap: () {}),
+                          SvgPicture.asset(
+                            'assets/images/mc_symbol.svg',
+                            height: 63,
+                            width: 89,
+                          )
                         ],
                       ),
-                    )
-                  ],
+                      const SizedBox(height: 12.0),
+                      const Text(
+                        'Tu saldo Disponible',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'MarkPro',
+                            fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(height: 12.0),
+                      const Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextRobotoBold(
+                            text: '\$ 32,524',
+                            size: 30.0,
+                            color: Colors.white,
+                          ),
+                          TextRobotoBold(
+                            text: '36',
+                            size: 15.0,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 12),
+                          Icon(
+                            Icons.visibility_off,
+                            color: colorTertearyText,
+                            size: 26.0,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 12.0),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Vencimiento',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            'CVV',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '05/27',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            '366',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 40),
+              const SubtitleWidget(subtitleText: 'Importe'),
+              const SizedBox(height: 22),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    '\$',
+                    style: TextStyle(
+                        color: Color(0xFF060912),
+                        fontSize: 40,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(width: 4),
+                  Container(
+                    width: 125,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                      ),
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                      style: const TextStyle(fontSize: 40),
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 171),
+              ElevatedButton(
+                onPressed: () {
+                  _showBottomSheet(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xFF1A2D4D),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 120.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                ),
+                child: const Text(
+                  "Continuar",
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'MarkPro'),
                 ),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.8,
+          padding: const EdgeInsets.all(30.0),
+          decoration: const BoxDecoration(
+              color: Color(0xFFFAFAFA),
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30), topLeft: Radius.circular(30))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Retiro Disponible",
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'MarkPro',
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              const CircleAvatar(
+                backgroundColor: Color(0xFF20B087),
+                radius: 40,
+                child: Icon(
+                  Icons.check,
+                  size: 40,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Pagó",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                  Text(
+                    "Brayn Sahagun",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8.0),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Cuenta",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                  Text(
+                    "5558 •••• •••• ••84",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8.0),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Clabe Destino",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                  Text(
+                    "123456789012345678",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8.0),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Fecha",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                  Text(
+                    "17 Abril, 2024",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8.0),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "7:08 pm",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Clave de Retiro",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                  Text(
+                    "5533 4387 2123",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Roboto',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                ],
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "*12 dígitos",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Código de seguridad",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                  Text(
+                    "1512",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Roboto',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                ],
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "*4 dígitos",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Monto",
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                  Text(
+                    "\$32,524",
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Roboto',
+                      color: Color(0xFF060912),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Puedes compartir esta clave para que otra persona haga el retiro.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'MarkPro',
+                      color: Color(0xFF606167),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xFF1A2D4D),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 18.0, horizontal: 145.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                ),
+                child: const Text(
+                  "Salir",
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'MarkPro'),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

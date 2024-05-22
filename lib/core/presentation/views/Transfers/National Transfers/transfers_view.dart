@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
 import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
 import 'package:fresh_start/core/presentation/widgets/rounded_button.dart';
 import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
+import 'package:fresh_start/core/presentation/widgets/transfers/contact_card.dart';
+import 'package:fresh_start/core/presentation/widgets/dropdown_list_bank.dart';
+
+String? selectedBank;
 
 class TransfersView extends StatelessWidget {
   const TransfersView({super.key});
@@ -17,13 +22,44 @@ class TransfersView extends StatelessWidget {
             children: [
               const SubtitleWidget(subtitleText: 'Cuenta Origen'),
               const SizedBox(
-                height: 70.0,
+                height: 8.0,
+              ),
+              Container(
+                padding:
+                    const EdgeInsets.only(left: 20.0, right: 20.0, top: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Selecciona una tarjeta',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontFamily: 'MarkPro',
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(
+                      height: 8.0,
+                    ),
+                    DropDownListBankWidget(
+                      value: selectedBank,
+                      items: const ['FreshBank', 'MazeBank'],
+                      onChanged: (String? newValue) {
+                        if (newValue != null) {
+                          selectedBank = newValue;
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 8.0,
               ),
               const SubtitleWidget(subtitleText: 'Destinatario'),
               const RoundedButtonWidget(),
               Container(
                 padding:
-                    const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                    const EdgeInsets.only(left: 20.0, right: 20.0, top: 8.0),
                 child: Column(children: [
                   Row(
                     children: [
@@ -36,7 +72,13 @@ class TransfersView extends StatelessWidget {
                       ),
                       const Spacer(),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EstadoDeCuentaWidget1()),
+                          );
+                        },
                         child: const Text(
                           "Ver todos",
                           style: TextStyle(
@@ -47,7 +89,15 @@ class TransfersView extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
+                  ),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
+                  const ContactCard(),
                 ]),
               )
             ],

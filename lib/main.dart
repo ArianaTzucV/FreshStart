@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_start/core/presentation/views/home.dart';
+import 'package:fresh_start/core/presentation/views/login_view.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,14 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'FreshBank',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0XFFF0F2F5)
-      ),
-      home: const HomePage(),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+          scaffoldBackgroundColor: const Color(0XFFF0F2F5)),
+      home: const LoginPage(),
     );
   }
 }

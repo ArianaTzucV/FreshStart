@@ -1,103 +1,98 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/Recharges/service__number.dart';
+import 'package:fresh_start/core/presentation/widgets/app_bar.dart';
+import 'package:fresh_start/core/presentation/widgets/recharges/buildResponsiveButtonRow.dart';
+import 'package:fresh_start/core/presentation/widgets/recharges/buildRoundedButton.dart';
+import 'package:fresh_start/core/presentation/widgets/subtitle.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+class RechargesView extends StatelessWidget {
+  const RechargesView({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Recargas x',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Recargas'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Container(
-          width:
-              MediaQuery.of(context).size.width * 0.30, // Phone container width
-          height: MediaQuery.of(context).size.height *
-              0.75, // Phone container height
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 5),
-              ),
-            ],
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Column(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 0, 39, 83),
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(25),
-                  ),
+      appBar: const AppBarWidget(titleAppBar: 'Recargas'),
+      body: SingleChildScrollView(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 16.0),
+            const SubtitleWidget(subtitleText: 'Selecciona la compañia'),
+            const SizedBox(
+              height: 20.0,
+            ),
+            BuildResponsiveButtonRowWidget(
+              buttons: [
+                BuildRoundedButtonWidget(
+                  imagePath: 'assets/images/Telcel_logo.svg.png',
+                  color: const Color(0xFFFAFAFA),
+                  onPressed: () {
+                    navigateToServiceNumber(context);
+                  },
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0, vertical: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // IconButton(
-                      //   icon: Icon(Icons.menu, color: Colors.white),
-                      //   onPressed: () {
-                      //     // Your menu action here
-                      //   },
-                      // ),
-                      Text(
-                        'Recargas',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      // IconButton(
-                      //   icon: Icon(Icons.notifications, color: Colors.white),
-                      //   onPressed: () {
-                      //     // Your notification action here
-                      //   },
-                      // ),
-                    ],
-                  ),
+                BuildRoundedButtonWidget(
+                  imagePath: 'assets/images/Movistar.png',
+                  color: const Color(0xFFFAFAFA),
+                  onPressed: () {
+                    navigateToServiceNumber(context);
+                  },
                 ),
-              ),
-              // Rest of the phone content goes here
-            ],
-          ),
+              ],
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            BuildResponsiveButtonRowWidget(
+              buttons: [
+                BuildRoundedButtonWidget(
+                  imagePath: 'assets/images/Unefon.png',
+                  color: const Color(0xFFFAFAFA),
+                  onPressed: () {
+                    navigateToServiceNumber(context);
+                  },
+                ),
+                BuildRoundedButtonWidget(
+                  imagePath: 'assets/images/AT&T.png',
+                  color: const Color(0xFFFAFAFA),
+                  onPressed: () {
+                    navigateToServiceNumber(context);
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            BuildResponsiveButtonRowWidget(
+              buttons: [
+                BuildRoundedButtonWidget(
+                  imagePath: 'assets/images/Virgin.png',
+                  color: const Color(0xFFFAFAFA),
+                  onPressed: () {
+                    navigateToServiceNumber(context);
+                  },
+                ),
+                BuildRoundedButtonWidget(
+                  imagePath: 'assets/images/Vodafone.png',
+                  color: const Color(0xFFFAFAFA),
+                  onPressed: () {
+                    navigateToServiceNumber(context);
+                  },
+                ),
+              ],
+            ),
+          ],
         ),
-      ),
+      )),
     );
   }
+}
+
+void navigateToServiceNumber(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const ServiceNumber()),
+  );
 }

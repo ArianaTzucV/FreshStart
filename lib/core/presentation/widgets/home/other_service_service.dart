@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/CoDi/codi_register_view.dart';
+import 'package:fresh_start/core/presentation/views/Recharges/recharges_view.dart';
+import 'package:fresh_start/core/presentation/views/Transfers/International%20Transfers/international_transfer.dart';
 import 'package:fresh_start/core/presentation/widgets/home/service_icon_button.dart';
+import 'package:fresh_start/main.dart';
 
 class OtherServiceSection extends StatelessWidget {
   const OtherServiceSection({
@@ -42,7 +46,12 @@ class OtherServiceSection extends StatelessWidget {
                       ),
                       bgColor: const Color(0xFF034F8D),
                       fgColor: const Color(0xFF060912),
-                      onTap: () {},
+                      onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const InternationalTrasnfersView()));
+                                  },
                     ),
                     ServiceIconButton(
                       title1: "Recarga",
@@ -53,7 +62,12 @@ class OtherServiceSection extends StatelessWidget {
                       ),
                       bgColor: const Color(0xFF034F8D),
                       fgColor: const Color(0xFF060912),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RechargesView()));
+                      },
                     ),
                     ServiceIconButton(
                       title1: "Operaciones",
@@ -64,7 +78,12 @@ class OtherServiceSection extends StatelessWidget {
                       ),
                       bgColor: const Color(0xFF034F8D),
                       fgColor: const Color(0xFF060912),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CodiRegisterView()));
+                      },
                     ),
                   ],
                 ),

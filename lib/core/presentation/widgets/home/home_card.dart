@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_start/core/presentation/views/estado_cuenta_view.dart';
+import 'package:fresh_start/styles.dart';
 
 class HomeCard extends StatelessWidget {
   const HomeCard({
@@ -7,9 +9,31 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: const EdgeInsets.only(top: 10.0),
-        color: const Color(0xFFFAFAFA),
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const EstadoDeCuentaWidget1(),
+          ),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(top: 10.0, bottom: 7.5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          color: colorPanel,
+          boxShadow: [
+            BoxShadow(
+              color: colorMainText.withOpacity(0.1),
+              blurRadius: 4.0,
+              spreadRadius: 0.0,
+              offset: const Offset(0.0, 6.0),
+            ),
+          ],
+        ),
         padding: const EdgeInsets.only(
           top: 5.0,
           bottom: 5.0,
@@ -23,15 +47,16 @@ class HomeCard extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: CircleAvatar(
-                    backgroundColor: Color(0xFF0F694F),
+                    backgroundColor: colorSecondaryComplementary,
                     radius: 25.0,
                     child: Text(
                       'IC',
                       style: TextStyle(
-                          fontFamily: 'MarkPro',
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                        fontFamily: 'MarkPro',
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -43,16 +68,20 @@ class HomeCard extends StatelessWidget {
                 Text(
                   'Irving Coyolt',
                   style: TextStyle(
-                      fontFamily: 'MarkPro',
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
+                    fontFamily: 'MarkPro',
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: colorMainText,
+                  ),
                 ),
                 Text(
                   'Transferencia',
                   style: TextStyle(
-                      fontFamily: 'MarkPro',
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w400),
+                    fontFamily: 'MarkPro',
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w400,
+                    color: colorMainText,
+                  ),
                 ),
               ],
             ),
@@ -67,6 +96,7 @@ class HomeCard extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'MarkPro',
                       fontSize: 20.0,
+                      color: colorMainText,
                     ),
                   ),
                   Row(
@@ -76,9 +106,10 @@ class HomeCard extends StatelessWidget {
                           Text(
                             "20-01-2024",
                             style: TextStyle(
-                                fontFamily: 'MarkPro',
-                                fontSize: 12,
-                                color: Color(0xFFA3A4A6)),
+                              fontFamily: 'MarkPro',
+                              fontSize: 12,
+                              color: colorTertearyText,
+                            ),
                           )
                         ],
                       ),
@@ -87,11 +118,14 @@ class HomeCard extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          Text("11:24 PM",
-                              style: TextStyle(
-                                  fontFamily: 'MarkPro',
-                                  fontSize: 12,
-                                  color: Color(0xFFA3A4A6)))
+                          Text(
+                            "11:24 PM",
+                            style: TextStyle(
+                              fontFamily: 'MarkPro',
+                              fontSize: 12,
+                              color: colorTertearyText,
+                            ),
+                          )
                         ],
                       )
                     ],
@@ -100,6 +134,8 @@ class HomeCard extends StatelessWidget {
               ),
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
