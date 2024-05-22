@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'amount_cash_express_model.g.dart';
 
+@JsonSerializable()
 class amountcash{
 String pay;
 String account;

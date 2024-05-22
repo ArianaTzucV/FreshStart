@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 part 'data_card_model.g.dart';
+
+@JsonSerializable()
 class dataCard {
 String cardNumbers;
 double availableBalance;
