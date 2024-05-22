@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'amount_cash_express_model.g.dart';
+
 class amountcash{
 String pay;
 String account;
@@ -20,4 +24,8 @@ amountcash({
   required this.securityCode,
   required this.amount
 });
+
+factory amountcash.amountJson(Map<String,dynamic>json) => _$AmountcashAmountJson(Json);
+Map<String, dynamic> toJson() => _$AmountCashToJson(This);
+
 }
